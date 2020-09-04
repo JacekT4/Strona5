@@ -39,18 +39,17 @@
                   
 		var  wiersz = document.createElement("li");                      //var - deklarowanie w danym bloku, lepiej let a najlepiej const
 		var  usuwacz = document.createElement("input");
-		wiersz.innerHTML = imie + "  " +nazwisko + "  " + email;
+		wiersz.innerHTML = imie + "  " + nazwisko + "  " + email;
 		usuwacz.setAttribute("type", "checkbox");
 		wiersz.appendChild(usuwacz);
 		lista.appendChild(wiersz);	
 		return true;
 	}
 	
-	var dodaj = document.getElementById("dodaj");
-	var lista = document.getElementById("lista");
-	var licznik = 0;
+	
 
-	dodaj.addEventListener("click", function() {
+	document.getElementById("dodaj").addEventListener("click", function() {
+		var lista = document.getElementById("lista");
 		var imie = document.getElementById("imie");
 		var nazwisko = document.getElementById("nazwisko");
 		var email = document.getElementById("email");
@@ -63,8 +62,7 @@
 
 	});
 	
-	var my_div = null;
-	var newDiv = null;
+
 		
 	var dodajGuzikUsuwania = function dodajGuzikUsuwania() {
 		console.log(document.getElementById("przyciskUsuwania"));
@@ -73,11 +71,13 @@
 			przycisk.id = "przyciskUsuwania";
 			przycisk.innerHTML = "Usuń zaznaczone";
 			document.body.appendChild(przycisk); 
-			licznik++;
 			
-			
-			newDiv = document.createElement("div");
-			newDiv.innerHTML = "<label>Wybierz kolor:</label><select id='co'>Lista kolorów<option value='#ff0000'>Czerwony</option><option value='#008000' selected='selected'>Zielony</option><option value='#000000'>Czarny</option><option value='#ffffff'>Biały</option></select>";			
+			var my_div = null;
+			var newDiv = null;
+	
+	
+			newDiv = document.createElement("div");        //ZMIENIĆ TO NIŻEJ document.createElement i appendChild()
+			newDiv.innerHTML = "<label>Wybierz kolor:</label><select id='co'>Lista kolorów<option value='#ff0000'>Czerwony</option><option value='#008000' selected='selected'>Zielony</option><option value='#000000'>Czarny</option><option value='#ffffff'>Biały</option></select>";			//innerHTML jest uważany za dośc niebezpieczny jeśli wstawiasz tylko tesk to lepiej textContent bo jak bedzie zmienna to sie nie wykona
 
 			my_div = document.getElementById("org_div1");
 			document.body.insertBefore(newDiv, my_div);
@@ -120,7 +120,7 @@
 				var checkbox;
 				
 			var e = document.getElementById("co");
-			var strUser = e.options[e.selectedIndex].value;
+			var strUser = e.options[e.selectedIndex].value;   //sprawdzić czy jest jednym z elementów listy bo moze byc atakowana
 
 				
 				var i = length;
