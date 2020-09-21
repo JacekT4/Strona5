@@ -39,8 +39,10 @@
                   
 		var  wiersz = document.createElement("li");                      //var - deklarowanie w danym bloku, lepiej let a najlepiej const
 		var  usuwacz = document.createElement("input");
+		wiersz.setAttribute("class", "list-group-item");                 // ustawiamy styl wiersza za pomocą bootstrapa
 		wiersz.innerHTML = imie + "  " + nazwisko + "  " + email;
 		usuwacz.setAttribute("type", "checkbox");
+//		usuwacz.setAttribute("aria-label", "Checkbox for following text input");   // ustawiamy styl checkbox za pomocą bootstrapa
 		wiersz.appendChild(usuwacz);
 		lista.appendChild(wiersz);	
 		return true;
@@ -70,6 +72,8 @@
 			var przycisk = document.createElement("button");
 			przycisk.id = "przyciskUsuwania";
 			przycisk.innerHTML = "Usuń zaznaczone";
+			przycisk.setAttribute("class", "btn btn-primary");   //dodalem z bootstrapem
+//			przycisk.setAttribute("style","margin: auto");   //dodalem z bootstrapem
 			document.body.appendChild(przycisk); 
 			
 			var my_div = null;
@@ -77,7 +81,7 @@
 	
 	
 			newDiv = document.createElement("div");        //ZMIENIĆ TO NIŻEJ document.createElement i appendChild()
-			newDiv.innerHTML = "<label>Wybierz kolor:</label><select id='co'>Lista kolorów<option value='#ff0000'>Czerwony</option><option value='#008000' selected='selected'>Zielony</option><option value='#000000'>Czarny</option><option value='#ffffff'>Biały</option></select>";			//innerHTML jest uważany za dośc niebezpieczny jeśli wstawiasz tylko tesk to lepiej textContent bo jak bedzie zmienna to sie nie wykona
+			newDiv.innerHTML = "<label>Wybierz kolor:</label><select class='custom-select' id='co'>Lista kolorów<option value='#ff0000'>Czerwony</option><option value='#008000' selected='selected'>Zielony</option><option value='#000000'>Czarny</option><option value='#ffffff'>Biały</option></select>";			//innerHTML jest uważany za dośc niebezpieczny jeśli wstawiasz tylko tesk to lepiej textContent bo jak bedzie zmienna to sie nie wykona
 
 			my_div = document.getElementById("org_div1");
 			document.body.insertBefore(newDiv, my_div);
@@ -85,6 +89,7 @@
 			var przycisk2 = document.createElement("button");
 			przycisk2.id = "ZmianaKoloru";
 			przycisk2.innerHTML = "Zmiana koloru";
+			przycisk2.setAttribute("class", "btn btn-primary");     //bootstrap
 			document.body.appendChild(przycisk2); 
 				
 				

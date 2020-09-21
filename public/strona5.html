@@ -3,38 +3,96 @@
 <head>
 	<meta charset="utf8">
 	<title>Forlmularze</title>
+	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	
-	<link rel="stylesheet" href="style.css">
+	<!--<link rel="stylesheet" href="style.css">-->
 	
 </head>
 <body>
 
-    <img src="logo.png" width="100" height="100" />
-	<form action="*">
-	<label>Imię</label> 
-	<input type="text" name="imie" id="imie" />
-	</form>
-	
-	<form action="*">
-	<label>Nazwisko</label> 
-	<input type="text" name="nazwisko" id="nazwisko" />
-	</form>
+	<div id="panel_gorny" class="mx-auto" style="width: 300px;">
 
-	<form action="*">
-	<label>email</label> 
-	<input type="email" name="email" id ="email" />
-	</form>
+	<!--
+		<form action="*">
+		<label>Imię</label> 
+		<input type="text" name="imie" id="imie" />
+		</form>
+		
+		<form action="*">
+		<label>Nazwisko:</label> 
+		<input type="text" name="nazwisko" id="nazwisko" />
+		</form>
+
+		<form action="*">
+		<label>email</label> 
+		<input type="email" name="email" id ="email" />
+		</form>
+		
+		<input type="submit" value="Wyślij" id="dodaj">
+	-->
+		
+	<!--skopiowane ze strony bootstrapa, gotowy styl ze strony-->
+		<form class="form-inline">
+		  <input type="text" class="form-control mb-2 mr-sm-2" id="imie" placeholder="imie">
+		  <input type="text" class="form-control mb-2 mr-sm-2" id="nazwisko" placeholder="nazwisko">
+
+		  <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+		  <div class="input-group mb-2 mr-sm-2">
+			<div class="input-group-prepend">
+			  <div class="input-group-text">@</div>
+			</div>
+			<input type="text" class="form-control" id="email" placeholder="email">
+		  </div>
+		</form>
+		
+		<button type="submit" class="btn btn-primary mb-2" id="dodaj">Submit</button>
+	</div>
 	
-	<input type="submit" value="Wyślij" id="dodaj">
-	
-	<br><br>
-	<div>Lista
-		<ol id="lista">
+	<div id="content" class="mx-auto" style="width: 300px;">
+		Lista
+		<ol id="lista" class="list-group">
 		</ol>
 	</div>
 	
-	<script src="script.js"></script>
+	
+	<!--
+	<div id="footer" class="mx-auto" style="width: 300px;">
+		<img src="assets/logo1.png" width="100" height="100" />
+		<img src="assets/logo2.png" width="100" height="100" />
+		<img src="assets/logo3.png" width="100" height="100" />
+		<img src="assets/logo4.png" width="100" height="100" />
+	</div>
+	-->
+	
+	<div id="footer" class="mx-auto" style="width: 300px;">
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+		  <div class="carousel-inner">
+			<div class="carousel-item active">
+			  <img src="assets/logo1.png" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+			  <img src="assets/logo2.png" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+			  <img src="assets/logo3.png"  class="d-block w-100" alt="...">
+			</div>		
+			<div class="carousel-item">
+			  <img src="assets/logo4.png"  class="d-block w-100" alt="...">
+			</div>
+		  </div>
+		  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		  </a>
+		</div>
+	</div>
+	
+	<script src="assets/script.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
